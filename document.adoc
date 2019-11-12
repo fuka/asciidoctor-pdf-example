@@ -1,0 +1,276 @@
+= AsciiDoctor-PDF 日本語ドキュメントサンプル
+:revdate: 2019/11/9
+:revnumber: 0.1版
+:version-label:
+:lang: ja
+:doctype: book
+// :scripts: cjk
+:imagesdir: images
+:pdf-style: theme-custom.yml
+:pdf-fontsdir: fonts
+:numbered:
+:chapter-label:
+:toc:
+:toc-title: 目次
+:preface-title: はじめに
+:appendix-caption: 付録
+:caution-caption: 注意
+:example-caption: 例
+:figure-caption: 図
+:important-caption: 重要
+:last-update-label: 最終更新
+:listing-caption: リスト
+:manname-title: 名前
+:note-caption: 注記
+:preface-title: まえがき
+:table-caption: 表
+:tip-caption: ヒント
+:toc-title: 目次
+:untitled-label: 無題
+:version-label: バージョン
+:warning-caption: 警告
+
+:!numbered:
+
+== 変更履歴
+
+[cols="1,2,2,2,2,6"]
+|=======
+|版|更新日|更新者|確認日|確認者|変更内容
+
+|0.0
+|2019/11/9
+|山田太郎
+|2019/11/9
+|山田太郎
+|更新履歴のサンプル。 +
+複数行に渡る更新履歴も書けます。
+
+|0.1
+|2019/11/9
+|山田太郎
+|
+|
+|新規作成
+
+|=======
+
+<<<
+
+:numbered:
+
+== はじめに
+
+=== 目的
+
+このドキュメントはAsciidoctor-pdfで日本語ドキュメントを書いた際にどのような出力になるかを確認するためのものです。テーマを上手に調整したらビジネス利用に耐えうるPDFドキュメントが生成できるのかどうかの検証も兼ねています。
+
+Asciidocの全記法を網羅するのではなく、仕様書のような「硬い」ドキュメントでよく使われれるであろう記法にフォーカスしています。テーマも仕様書系のドキュメントを想定して調整しています。
+
+
+== AsciiDocの記法いろいろ
+
+AsciiDocの記法がどのようなPDF出力になるかのサンプルです。ドキュメント作成で利用頻度が高そうな記法をピックアップしています。
+
+=== 太字、斜体、等幅
+
+太字は反映されますが、斜体はフォントが用意できなかったので反映されません。設定自体は有効なので、日本語の斜体フォントが手配できれば反映させられます。
+
+====
+**bold**, __italic__, **__bold and italic__**
+
+**太字のサンプル**, __斜体のサンプル__, **__太字かつ斜体のサンプル__**
+
+``monospace``, ``**monospace and bold**``, ``__monospace and italic__``, ``**__monospace and bold and italic__**``
+
+``等幅のサンプル``, ``**等幅かつ太字のサンプル**``, ``__等幅かつ斜体のサンプル__``, ``**__等幅かつ太字かつ斜体のサンプル__**``
+====
+
+
+=== いろいろな文字装飾
+
+一通りの装飾が反映されます。
+
+====
+#マーカー# のサンプル, [.big]#大きい文字# のサンプル,  [.small]#小さい文字# のサンプル
+
+[.underline]#下線# のサンプル,  [.line-through]#取り消し線# のサンプル
+
+^上付き文字^のサンプル, ~下付き文字~のサンプル
+
+"`ダブルカーブクォート`" のサンプル, '`シングルカーブクォート`' のサンプル
+====
+
+=== リスト
+
+リスト表示のサンプルです。番号なし、番号付きともに階層が深くなっても綺麗に表示できます。リスト内でも禁則処理は有効です。
+
+- 階層の深い番号なしリストの例
+  * リストA-1
+    ** リストA-1-a
+    ** リストA-1-b
+    ** リストA-1-c
+  * リストA-2
+  * リストA-3
+- 階層の深い番号付きリストの例
+  1. リストB-1
+    a. リストB-1-a
+    b. リストB-1-b
+    c. リストB-1-c
+  2. リストB-2
+    i) リストB-2-i
+    ii) リストB-2-ii
+    iii) リストB-2-iii
+  3. リストB-3
+- リストの中身が長文になる例
+  * 日本国民は、正当に選挙された国会における代表者を通じて行動し、われらとわれらの子孫のために、諸国民との協和による成果と、わが国全土にわたつて自由のもたらす恵沢を確保し、政府の行為によつて再び戦争の惨禍が起ることのないやうにすることを決意し、ここに主権が国民に存することを宣言し、この憲法を確定する。
+  * そもそも国政は、国民の厳粛な信託によるものてあつて、その権威は国民に由来し、その権力は国民の代表者がこれを行使し、その福利は国民がこれを享受する。これは人類普遍の原理であり、この憲法は、かかる原理に基くものである。われらは、これに反する一切の憲法、法令及び詔勅を排除する。
+
+
+=== テーブル
+
+テーブル記法の豊富さはAsciiDocの特長のひとつです。
+
+==== CSV
+
+[format="csv", options="header"]
+|=======
+No, 名前, 考案者, 初出
+1, AsciiDoc, Stuart Rackham, 2002
+2, DocBook, "The Davenport Group, OASIS", 1992
+3, HTML, Tim Berners-Lee, 1993
+4, Markdown, John Gruber and Aaron Swartz, 2004
+5, TeX, Donald Knuth, 1978
+|=======
+
+==== 縦積み
+
+[options="header", align="center"]
+|=======
+| 言語 | パラダイム | 型付け | 登場時期
+
+|C
+|命令型
+|安全でない弱い静的型付け
+|1973
+
+|Java
+|命令型, オブジェクト指向, マルチプラットフォーム, ジェネリック
+|強い静的型付け
+|1994
+
+|JavaScript
+|命令型, オブジェクト指向, 関数型
+|強い動的型付け
+|1995
+
+|Swift
+|命令型, オブジェクト指向, 関数型、ジェネリック
+|強い静的型付け、型推論
+|2014
+
+|=======
+
+
+== 長文サンプル
+
+長めの文章のサンプルです。均等割り付けができないのと禁則処理が不完全なのがネックですが、可読性はさほど問題にならないのではないでしょうか。
+
+=== 日本国憲法前文
+
+日本国民は、正当に選挙された国会における代表者を通じて行動し、われらとわれらの子孫のために、諸国民との協和による成果と、わが国全土にわたつて自由のもたらす恵沢を確保し、政府の行為によつて再び戦争の惨禍が起ることのないやうにすることを決意し、ここに主権が国民に存することを宣言し、この憲法を確定する。そもそも国政は、国民の厳粛な信託によるものであつて、その権威は国民に由来し、その権力は国民の代表者がこれを行使し、その福利は国民がこれを享受する。これは人類普遍の原理であり、この憲法は、かかる原理に基くものである。われらは、これに反する一切の憲法、法令及び詔勅を排除する。
+
+日本国民は、恒久の平和を念願し、人間相互の関係を支配する崇高な理想を深く自覚するのであつて、平和を愛する諸国民の公正と信義に信頼して、われらの安全と生存を保持しようと決意した。われらは、平和を維持し、専制と隷従、圧迫と偏狭を地上から永遠に除去しようと努めてゐる国際社会において、名誉ある地位を占めたいと思ふ。われらは、全世界の国民が、ひとしく恐怖と欠乏から免かれ、平和のうちに生存する権利を有することを確認する。
+
+われらは、いづれの国家も、自国のことのみに専念して他国を無視してはならないのであつて、政治道徳の法則は、普遍的なものであり、この法則に従ふことは、自国の主権を維持し、他国と対等関係に立たうとする各国の責務であると信ずる。
+
+日本国民は、国家の名誉にかけ、全力をあげてこの崇高な理想と目的を達成することを誓ふ。
+
+=== 日本国憲法前文（英語版）
+
+We, the Japanese People, acting through our duly elected representatives in the National Diet, determined that we shall secure for ourselves and our posterity the fruits of peaceful cooperation with all nations and the blessings of liberty throughout this land, and resolved that never again shall we be visited with the horrors of war through the action of government, do proclaim the sovereignty of the people's will and do ordain and establish this Constitution, founded upon the universal principle that government is a sacred trust the authority for which is derived from the people, the powers of which are exercised by the representatives of the people, and the benefits of which are enjoyed by the people; and we reject and revoke all constitutions, ordinances, laws and rescripts in conflict herewith.
+
+Desiring peace for all time and fully conscious of the high ideals controlling human relationship now stirring mankind, we have determined to rely for our security and survival upon the justice and good faith of the peace-loving peoples of the world. We desire to occupy an honored place in an international society designed and dedicated to the preservation of peace, and the banishment of tyranny and slavery, oppression and intolerance, for all time from the earth. We recognize and acknowledge that all peoples have the right to live in peace, free from fear and want.
+
+We hold that no people is responsible to itself alone, but that laws of political morality are universal; and that obedience to such laws is incumbent upon all peoples who would sustain their own sovereignty and justify their sovereign relationship with other peoples.
+
+To these high principles and purposes we, the Japanese People, pledge our national honor, determined will and full resources.
+
+
+== 日本語禁則処理サンプル
+
+日本語の禁則についての基本ルールは3つあります。それぞれどのような結果になるかを確認するためのサンプルです。
+
+=== 行頭禁則文字
+
+行頭禁則は「特定の文字は行の頭にきてはいけない」というルールです。
+
+==== 句読点
+
+禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです。
+
+禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです．禁則処理のサンプルです。
+
+禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルかつ、禁則処理のサンプルです。
+
+禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルかつ，禁則処理のサンプルです。
+
+==== 拗促音
+
+禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルスペック。禁則処理のサンプルです。
+
+禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルをチャット。禁則処理のサンプルです。
+
+==== 長音符
+
+禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルフレーズ。禁則処理のサンプルです。
+
+禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルフレーーズ。禁則処理のサンプルです。
+
+==== 繰り返し
+
+禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルを諸々詰め込んだ禁則処理のサンプルです。
+
+==== その他
+
+禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプリング・サンプル。禁則処理のサンプルです。
+
+禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです！！禁則処理のサンプルです。
+
+禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです？？禁則処理のサンプルです。
+
+
+
+=== 行末禁則文字
+
+行末禁則は「特定の文字は行の末尾にきてはいけない」というルールです。
+
+==== カッコ
+
+禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルは「禁則処理のサンプル」です。
+
+禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルは【禁則処理のサンプル】です。
+
+禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルは｛禁則処理のサンプル｝です。
+
+禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルは（禁則処理のサンプル）です。
+
+==== 記号
+
+禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルは〈禁則処理のサンプル〉です。
+
+禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルは〝禁則処理のサンプル〟です。
+
+
+=== 分割禁止文字
+
+分離禁止は「特定の文字列は行をまたいで分離してはいけない」というルールです。
+
+==== 二点リーダ・三点リーダ
+
+禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルと‥‥。禁則処理のサンプルです。
+
+禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルと……。禁則処理のサンプルです。
+
+禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルです。禁則処理のサンプルと——。禁則処理のサンプルです。
+
