@@ -1,6 +1,6 @@
 # asciidoctor-pdf-example
 
-[Asciidoctor PDF](https://github.com/asciidoctor/asciidoctor-pdf)日本語ドキュメントを書いた際にどのような出力になるかを確認するためのサンプルです。
+[Asciidoctor PDF](https://github.com/asciidoctor/asciidoctor-pdf)で日本語ドキュメントを書いた際にどのような出力になるかを確認するためのサンプルです。
 
 仕様書のような「硬い」ドキュメントを想定してテーマを調整し、業務用途でどの程度使えるかを判断する材料にしています。
 
