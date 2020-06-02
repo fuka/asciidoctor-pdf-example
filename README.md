@@ -11,9 +11,9 @@
 以下のバージョンで検証しています。
 
 - asciidoctor: 2.0.10
-- asciidoctor-pdf: 1.5.0.beta.6
-- asciidoctor-pdf-linewrap-ja: 0.6.0
-- asciidoctor-diagram: 1.5.19
+- asciidoctor-pdf: 1.5.3
+- asciidoctor-pdf-linewrap-ja: 0.7.1
+- asciidoctor-diagram: 2.0.2
 
 ## ライセンス
 
